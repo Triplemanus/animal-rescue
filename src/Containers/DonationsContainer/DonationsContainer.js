@@ -1,16 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './DonationContainer.scss';
+import './DonationsContainer.scss';
 import { bindActionCreators } from 'redux';
 import { fetchDonations } from '../../util/apiCalls';
+import { getDonations, isLoading, hasErrored } from '../../actions';
 
 
 export class DonationsContainer extends React.Component {
-  state = {
-    name: "",
-    donation: ""
+  constructor() {
+    super();
+    this.state = {
+      name: '',
+      donationValue: 0
+    }
   };
-  
   getDonations = async () => {
     const donationData = {
       id: Date.now(),
@@ -25,14 +28,12 @@ export class DonationsContainer extends React.Component {
     };
 
     getDonationData = (e) => {
-      let { name, value } = e.target;
-      this.setState({ [name]: value });
+      this.setState({ [e.target.name]: [e.target.donationValue] });
     }
-  };
-
-  render() {
-    return (
-      <section className="donations">
+    
+    render() {
+      return (
+        <section className="donations">
         <form>
           <input
             type="text"
@@ -40,13 +41,13 @@ export class DonationsContainer extends React.Component {
             value={this.state.name}
             onChange={this.getDonationData}
             autoComplete="off"
-          />
+            />
           <input
             type="text"
             name="donation"
-            value={this.state.donation}
+            value={this.state.donationValue}
             onChange={this.getDonationData}
-          />
+            />
           <button className="button" onClick={this.handleSubmit}>
             Submit Donation
           </button>
@@ -54,8 +55,9 @@ export class DonationsContainer extends React.Component {
       </section>
     );
   }
-
-
+};
+  
+  
 export const mapDispatchToProps = dispatch => (
   bindActionCreators({
     getDonations,
