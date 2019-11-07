@@ -5,7 +5,7 @@ export const fetchAnimals = async (animals) => {
   if (!response.ok) {
     throw new Error ('There was an error getting animals data.');
   }
-  const animals = await response.json();
+   animals = await response.json();
   return animals;
 };
 
@@ -16,6 +16,6 @@ export const fetchDonations = async (donations) => {
   if (!response.ok) {
     throw new Error ('There was an error getting donations data.');
   }
-  const donations = await response.json();
+   donations = await response.json();
   return donations;
 }

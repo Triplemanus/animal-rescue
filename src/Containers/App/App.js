@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getAnimals, isLoading, hasErrored} from '../../actions';
 import './App.scss';
 import CardContainer from '../CardContainer/CardContainer';
+import DonationContainer from '../DonationsContainer/DonationsContainer';
 import { bindActionCreators } from 'redux';
 
 class App extends React.Component {
@@ -26,6 +27,9 @@ class App extends React.Component {
     return (
       <section className="App">
         <header>
+          <div>
+            <DonationContainer />
+          </div>
           <h2>Animal Rescue</h2>
         </header>
         <CardContainer />
