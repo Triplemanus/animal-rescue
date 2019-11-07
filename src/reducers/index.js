@@ -7,5 +7,5 @@ import { animalsReducer } from './animalsReducer';
 export const rootReducer = combineReducers({
   errorMsg,
   isLoading,
-  animalsReducer
+  animals: animalsReducer
 });
