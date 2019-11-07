@@ -1,0 +1,13 @@
+.card-container {
+  display: flex;
+  margin: 1rem;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  border-right: none;
+  width: 75%;
+}
