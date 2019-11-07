@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './Containers/App/App';
-import { rootReducer } from './reducers';
+import { rootReducer } from './reducers/index';
 import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { Provider } from 'react-redux';
