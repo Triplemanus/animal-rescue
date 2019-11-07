@@ -15,7 +15,7 @@ export const CardContainer = (props) => {
 
   return (
     <div className="card-container">
-      <section className="card">
+      <section className="cards-display">
         {cardsDisplay}
       </section>
     </div>
